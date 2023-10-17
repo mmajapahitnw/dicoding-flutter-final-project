@@ -1,4 +1,4 @@
-var todo_list = [
+var todoList = [
   ['first task', false],
   ['second task', false]
 ]
