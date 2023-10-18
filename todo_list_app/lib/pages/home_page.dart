@@ -10,14 +10,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var todoList = [
     ['first task', false],
-    ['second task', false]
+    ['second task', false],
+    ['third task',  false],
+    ['fourth task', false]
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'TO DO List',
           ),
@@ -30,7 +32,9 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               color: Colors.blue,
-              height: 100,
+              child: Text(
+                todoList[index][0].toString(),
+              )
             ),
           );
         },
