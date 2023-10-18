@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: const Center(
           child: Text(
@@ -32,8 +33,12 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               color: Colors.blue,
+              padding: const EdgeInsets.all(20),
               child: Text(
                 todoList[index][0].toString(),
+                style: TextStyle(
+                  fontFamily: 
+                ),
               )
             ),
           );
