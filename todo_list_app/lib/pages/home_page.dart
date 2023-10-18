@@ -8,7 +8,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var todoList = [
+  //list of tasks
+  List todoList = [
     ['first task', false],
     ['second task', false],
     ['third task',  false],
@@ -38,13 +39,25 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black54,
                 borderRadius: BorderRadius.circular(12)
               ),
-              child: Text(
-                todoList[index][0].toString(),
-                style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 16,
-                  color: Colors.white
-                ),
+              child: Row(
+                children: [
+                  Checkbox(
+                    value: todoList[index][1],
+                    onChanged: (bool? value) {
+                      setState(() {
+                        todoList[index][1] = value!;
+                      });
+                    },
+                  ),
+                  Text(
+                    todoList[index][0].toString(),
+                    style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 16,
+                      color: Colors.white
+                    ),
+                  ),
+                ],
               )
             ),
           );
