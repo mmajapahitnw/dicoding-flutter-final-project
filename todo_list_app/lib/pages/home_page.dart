@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_app/components/todo_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var todoList = [
+    ['first task', false],
+    ['second task', false]
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +25,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView.builder(
         itemCount: todoList.length,
-        itemBuilder: ,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              color: Colors.blue,
+              height: 100,
+            ),
+          );
+        },
       ),
     );
   }
