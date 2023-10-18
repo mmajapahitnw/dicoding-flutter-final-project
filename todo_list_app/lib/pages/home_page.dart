@@ -18,8 +18,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.grey,
       appBar: AppBar(
+        backgroundColor: Colors.black54,
         title: const Center(
           child: Text(
             'TO DO List',
@@ -30,14 +31,19 @@ class _HomePageState extends State<HomePage> {
         itemCount: todoList.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 24, left: 24, right: 24),
             child: Container(
-              color: Colors.blue,
               padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(12)
+              ),
               child: Text(
                 todoList[index][0].toString(),
-                style: TextStyle(
-                  fontFamily: 
+                style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  color: Colors.white
                 ),
               )
             ),
