@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  // final String imagePath;
-  // final String name;
-  // final String desc;
-  // final String price;
+  final String imagePath;
+  final String name;
+  final String desc;
+  final String price;
 
   const DetailPage({
-     super.key,
-    // required this.imagePath,
-    // required this.name,
-    // required this.desc,
-    // required this.price,
+    super.key,
+    required this.imagePath,
+    required this.name,
+    required this.desc,
+    required this.price,
   });
 
   @override
@@ -24,7 +24,7 @@ class DetailPage extends StatelessWidget {
             Stack(
               children: [
                 // image
-                Image.asset('lib/images/allen.jpg'),
+                Image.asset(imagePath),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -53,7 +53,7 @@ class DetailPage extends StatelessWidget {
               ],
             ),
 
-            // container for item name
+            // container for item detail card
             Container(
               height: 150,
               decoration: BoxDecoration(
@@ -73,11 +73,11 @@ class DetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'item_name',
+                          name,
                           style: TextStyle(fontSize: 20),
                         ),
                         SizedBox(height: 12),
-                        Text('item_desc'),
+                        Text(desc),
                       ],
                     ),
 
@@ -260,7 +260,7 @@ class DetailPage extends StatelessWidget {
                           ),
                           children: <TextSpan>[
                             TextSpan(
-                                text: 'harga_item',
+                                text: price,
                                 style: TextStyle(color: Colors.white))
                           ]),
                     ),

@@ -1,6 +1,5 @@
 import 'package:cafe_app_ui/components/coffee_tile.dart';
 import 'package:cafe_app_ui/components/coffee_type.dart';
-import 'package:cafe_app_ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -149,24 +148,11 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTilesInfo.length,
               itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return DetailPage(
-                        // imagePath: coffeeTilesInfo[index][0],
-                        // name: coffeeTilesInfo[index][1],
-                        // desc: coffeeTilesInfo[index][2],
-                        // price: coffeeTilesInfo[index][3],
-                      );
-                    }));
-                  },
-                  child: CoffeeTile(
-                    imagePath: coffeeTilesInfo[index][0],
-                    name: coffeeTilesInfo[index][1],
-                    desc: coffeeTilesInfo[index][2],
-                    price: coffeeTilesInfo[index][3],
-                  ),
+                return CoffeeTile(
+                  imagePath: coffeeTilesInfo[index][0],
+                  name: coffeeTilesInfo[index][1],
+                  desc: coffeeTilesInfo[index][2],
+                  price: coffeeTilesInfo[index][3],
                 );
               },
             ),
