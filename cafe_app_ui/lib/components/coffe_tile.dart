@@ -9,7 +9,10 @@ class CoffeTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 24, bottom: 24),
       child: Container(
         width: 200,
-        color: Colors.black,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(12),
+        ),
       ),
     );
   }

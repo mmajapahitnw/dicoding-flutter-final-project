@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          SizedBox(height: 10,),
 
           // search bar
           Padding(
@@ -49,10 +50,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey.shade600),
-                )
+                ),
               ),
             ),
           ),
+          SizedBox(height: 24,),
 
           // recommendation tiles
           Expanded(
