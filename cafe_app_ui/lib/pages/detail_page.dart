@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  // final String imagePath;
+  // final String name;
+  // final String desc;
+  // final String price;
+
+  const DetailPage({
+     super.key,
+    // required this.imagePath,
+    // required this.name,
+    // required this.desc,
+    // required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +62,103 @@ class DetailPage extends StatelessWidget {
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20)),
               ),
-              child: Row(
-                children: [
-                  Column(
-                    children: [
-                      Text('item_name'),
-                      Text('item_desc')
-                    ],
-                  )
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 36),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // item name and desc on the left
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'item_name',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 12),
+                        Text('item_desc'),
+                      ],
+                    ),
+
+                    // 3 boxes on the right -> coffee, milk, and roast
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // coffee and milk row
+                        Container(
+                          width: 120,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              // coffee box
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[800],
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.coffee,
+                                      color: Colors.orange,
+                                    ),
+                                    SizedBox(height: 2),
+                                    Text('Coffee',
+                                        style: TextStyle(
+                                            color: Colors.grey, fontSize: 10))
+                                  ],
+                                ),
+                              ),
+
+                              // milk box
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[800],
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.water_drop,
+                                      color: Colors.orange,
+                                    ),
+                                    SizedBox(height: 2),
+                                    Text('Milk',
+                                        style: TextStyle(
+                                            color: Colors.grey, fontSize: 10))
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+
+                        // medium roasted box
+                        Container(
+                          height: 30,
+                          width: 120,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[800],
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                              child: Text(
+                            'Medium Roasted',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          )),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -153,19 +252,17 @@ class DetailPage extends StatelessWidget {
                     Text('Price'),
                     RichText(
                       text: TextSpan(
-                        text: 'IDR ',
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'harga_item',
-                            style: TextStyle(color: Colors.white)
-                          )
-                        ]
-                      ),
+                          text: 'IDR ',
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: 'harga_item',
+                                style: TextStyle(color: Colors.white))
+                          ]),
                     ),
                   ],
                 ),

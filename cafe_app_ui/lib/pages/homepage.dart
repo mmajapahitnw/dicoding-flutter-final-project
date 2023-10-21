@@ -151,8 +151,14 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return DetailPage();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DetailPage(
+                        // imagePath: coffeeTilesInfo[index][0],
+                        // name: coffeeTilesInfo[index][1],
+                        // desc: coffeeTilesInfo[index][2],
+                        // price: coffeeTilesInfo[index][3],
+                      );
                     }));
                   },
                   child: CoffeeTile(
@@ -170,8 +176,17 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.orange,), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag,), label: ''),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.orange,
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_bag,
+              ),
+              label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
         ],
