@@ -63,7 +63,10 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                CoffeeType(name: 'Cappucino')
+                CoffeeType(name: 'Cappucino'),
+                CoffeeType(name: 'Latte'),
+                CoffeeType(name: 'White'),
+                CoffeeType(name: 'Black'),
               ],
             ),
           ),
