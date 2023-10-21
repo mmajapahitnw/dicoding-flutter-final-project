@@ -36,13 +36,13 @@ class _HomePageState extends State<HomePage> {
     [
       'lib/images/espresso.jpg',
       'Espresso Shot',
-      'Single 30mL / Double 60mL',
+      'Strong and Refreshing Single 30mL / Double 60mL',
       '18000',
     ],
     [
       'lib/images/latte.jpg',
       'White Creamy Latte',
-      'Simply & Creamy Buddies!',
+      'Everyone\'s favorite, Simply & Creamy Buddies!',
       '25000',
     ],
     [
@@ -84,6 +84,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           // header
           Padding(
@@ -96,15 +97,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 26),
 
           // search bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: TextField(
               decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(vertical: 6),
                 prefixIcon: Icon(Icons.search),
                 hintText: 'Search your coffee...',
                 focusedBorder: OutlineInputBorder(
@@ -116,9 +116,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(
-            height: 24,
-          ),
+          SizedBox(height: 36),
 
           // coffee type scrollable
           Container(
@@ -139,7 +137,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           // menu tiles
-          Expanded(
+          Flexible(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTilesInfo.length,
@@ -148,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                   imagePath: coffeeTilesInfo[index][0],
                   name: coffeeTilesInfo[index][1],
                   desc: coffeeTilesInfo[index][2],
-                  price: '25000',
+                  price: coffeeTilesInfo[index][3],
                 );
               },
             ),

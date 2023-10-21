@@ -26,6 +26,7 @@ class CoffeeTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // menu item image
             Padding(
@@ -44,8 +45,10 @@ class CoffeeTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // item name
                   Text(
                     name,
                     style: TextStyle(fontSize: 20),
@@ -53,6 +56,8 @@ class CoffeeTile extends StatelessWidget {
                   SizedBox(
                     height: 2,
                   ),
+
+                  // item description
                   Text(
                     desc,
                     style: TextStyle(
@@ -69,7 +74,10 @@ class CoffeeTile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // item price
                   Text('IDR $price'),
+
+                  // buy button
                   Container(
                     padding: const EdgeInsets.all(4),
                     child: Icon(Icons.add),
