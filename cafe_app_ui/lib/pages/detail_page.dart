@@ -68,18 +68,22 @@ class DetailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // item name and desc on the left
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          name,
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        SizedBox(height: 12),
-                        Text(desc),
-                      ],
+                    Container(
+                      width: MediaQuery.of(context).size.width-24-24-120-24-10,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          SizedBox(height: 12),
+                          Text(desc, style: TextStyle(color: Colors.grey),),
+                        ],
+                      ),
                     ),
+                    SizedBox(width: 10),
 
                     // 3 boxes on the right -> coffee, milk, and roast
                     Column(
