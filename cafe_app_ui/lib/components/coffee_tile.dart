@@ -64,16 +64,16 @@ class CoffeeTile extends StatelessWidget {
                     // item name
                     Text(
                       name,
-                      style: TextStyle(fontSize: 20),
+                      style: const TextStyle(fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 2,
                     ),
 
                     // item description
                     Text(
                       desc,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.grey,
                       ),
                     )
@@ -93,10 +93,10 @@ class CoffeeTile extends StatelessWidget {
                     // buy button
                     Container(
                       padding: const EdgeInsets.all(4),
-                      child: Icon(Icons.add),
                       decoration: BoxDecoration(
                           color: Colors.orange,
                           borderRadius: BorderRadius.circular(6)),
+                      child: const Icon(Icons.add),
                     )
                   ],
                 ),

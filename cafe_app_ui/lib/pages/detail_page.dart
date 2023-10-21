@@ -58,7 +58,7 @@ class DetailPage extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                 color: Colors.grey[900],
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20)),
               ),
@@ -68,7 +68,7 @@ class DetailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // item name and desc on the left
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width-24-24-120-24-10,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -76,21 +76,21 @@ class DetailPage extends StatelessWidget {
                         children: [
                           Text(
                             name,
-                            style: TextStyle(fontSize: 24),
+                            style: const TextStyle(fontSize: 24),
                           ),
-                          SizedBox(height: 12),
-                          Text(desc, style: TextStyle(color: Colors.grey),),
+                          const SizedBox(height: 12),
+                          Text(desc, style: const TextStyle(color: Colors.grey),),
                         ],
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
 
                     // 3 boxes on the right -> coffee, milk, and roast
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // coffee and milk row
-                        Container(
+                        SizedBox(
                           width: 120,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +103,7 @@ class DetailPage extends StatelessWidget {
                                   color: Colors.grey[800],
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Column(
+                                child: const Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
@@ -126,7 +126,7 @@ class DetailPage extends StatelessWidget {
                                   color: Colors.grey[800],
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Column(
+                                child: const Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
@@ -143,7 +143,7 @@ class DetailPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
 
                         // medium roasted box
                         Container(
@@ -153,7 +153,7 @@ class DetailPage extends StatelessWidget {
                             color: Colors.grey[800],
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Center(
+                          child: const Center(
                               child: Text(
                             'Medium Roasted',
                             style: TextStyle(color: Colors.grey, fontSize: 12),
@@ -165,34 +165,34 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Description',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     'Enjoy AWOR\'s spin on $name. Made with love, a signature treat for weary soul.',
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
-                  SizedBox(height: 24),
-                  Text(
+                  const SizedBox(height: 24),
+                  const Text(
                     'Size',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -204,7 +204,7 @@ class DetailPage extends StatelessWidget {
                         child: Padding(
                           padding:
                               EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
-                          child: Text('S'),
+                          child: const Text('S'),
                         ),
                       ),
                       Container(
@@ -215,7 +215,7 @@ class DetailPage extends StatelessWidget {
                         child: Padding(
                           padding:
                               EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
-                          child: Text('M'),
+                          child: const Text('M'),
                         ),
                       ),
                       Container(
@@ -228,7 +228,7 @@ class DetailPage extends StatelessWidget {
                         child: Padding(
                           padding:
                               EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
-                          child: Text(
+                          child: const Text(
                             'L',
                             style: TextStyle(color: Colors.orange),
                           ),
@@ -242,7 +242,7 @@ class DetailPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 70,
         child: Padding(
           padding: const EdgeInsets.only(left: 24, right: 24, bottom: 12),
@@ -253,11 +253,11 @@ class DetailPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Price'),
+                    const Text('Price'),
                     RichText(
                       text: TextSpan(
                           text: 'IDR ',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.orange,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -265,7 +265,7 @@ class DetailPage extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                                 text: price,
-                                style: TextStyle(color: Colors.white))
+                                style: const TextStyle(color: Colors.white))
                           ]),
                     ),
                   ],
@@ -277,7 +277,7 @@ class DetailPage extends StatelessWidget {
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Buy Now',
                       style: TextStyle(
