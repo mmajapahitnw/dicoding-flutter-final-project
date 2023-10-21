@@ -54,19 +54,19 @@ class _FavoriteButtonState extends State<FavoriteButton> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: CircleAvatar(
-        backgroundColor: Colors.grey[800],
-        child: Icon(
+    return CircleAvatar(
+      backgroundColor: Colors.grey[800],
+      child: IconButton(
+        icon: Icon(
           isFavorite ? Icons.favorite : Icons.favorite_border,
           color: Colors.orange,
         ),
+        onPressed: () {
+          setState(() {
+            isFavorite = !isFavorite;
+          });
+        },
       ),
-      onTap: () {
-        setState(() {
-          isFavorite = !isFavorite;
-        });
-      },
     );
   }
 }
