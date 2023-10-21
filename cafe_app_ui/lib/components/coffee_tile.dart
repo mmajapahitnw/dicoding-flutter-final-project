@@ -29,80 +29,77 @@ class CoffeeTile extends StatelessWidget {
               );
             }));
       },
-      child: Padding(
-        padding: const EdgeInsets.only(left: 24),
-        // foundation tile
-        child: Container(
-          width: 200,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // menu item image
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 8,
-                  left: 8,
-                  right: 8,
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(imagePath),
-                ),
+      child: Container(
+        margin: const EdgeInsets.only(left: 24),
+        width: 200,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // menu item image
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 8,
+                left: 8,
+                right: 8,
               ),
-
-              // name and desc
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // item name
-                    Text(
-                      name,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-
-                    // item description
-                    Text(
-                      desc,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
-                ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(imagePath),
               ),
+            ),
 
-              // price and buy
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // item price
-                    Text('IDR $price'),
+            // name and desc
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // item name
+                  Text(
+                    name,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
 
-                    // buy button
-                    Container(
-                      padding: const EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(6)),
-                      child: const Icon(Icons.add),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                  // item description
+                  Text(
+                    desc,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            // price and buy
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // item price
+                  Text('IDR $price'),
+
+                  // buy button
+                  Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(6)),
+                    child: const Icon(Icons.add),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
