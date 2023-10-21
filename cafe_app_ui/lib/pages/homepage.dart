@@ -23,7 +23,36 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Column(
-        children: [],
+        children: [
+          // header
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Text(
+              'FIND THE BEST COFFEE FOR YOU',
+              style: TextStyle(
+                fontFamily: 'BebasNeue',
+                fontSize: 56,
+              ),
+            ),
+          ),
+
+          // search bar
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                hintText: 'Search your coffee...',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                )
+              ),
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
