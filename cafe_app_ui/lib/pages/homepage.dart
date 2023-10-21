@@ -1,4 +1,5 @@
-import 'package:cafe_app_ui/components/coffe_tile.dart';
+import 'package:cafe_app_ui/components/coffee_tile.dart';
+import 'package:cafe_app_ui/components/coffee_type.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,7 +57,18 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(height: 24,),
 
-          // recommendation tiles
+          // coffe type scrollable
+          Container(
+            height: 50,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CoffeeType(name: 'Cappucino')
+              ],
+            ),
+          ),
+
+          // menu tiles
           Expanded(
             child: ListView(
               scrollDirection: Axis.horizontal,
