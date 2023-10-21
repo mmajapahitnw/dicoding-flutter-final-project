@@ -8,9 +8,12 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // stack item image with back and favorite button
             Stack(
               children: [
+                // image
                 Image.asset('lib/images/allen.jpg'),
                 SafeArea(
                   child: Padding(
@@ -18,6 +21,7 @@ class DetailPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        // back button
                         CircleAvatar(
                           backgroundColor: Colors.grey[800],
                           child: IconButton(
@@ -25,16 +29,53 @@ class DetailPage extends StatelessWidget {
                               Icons.chevron_left,
                               color: Colors.orange,
                             ),
-                            onPressed: () {Navigator.pop(context);},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                           ),
                         ),
+                        // favorite button
                         const FavoriteButton(),
                       ],
                     ),
                   ),
                 )
               ],
-            )
+            ),
+
+            // container for item name
+            Container(
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
+              ),
+            ),
+            SizedBox(height: 20),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                'Description',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Text(
+                'Enjoy AWOR\'s spin on coffee_name. Made with love, a signature treat for weary soul.',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+
+            
           ],
         ),
       ),
