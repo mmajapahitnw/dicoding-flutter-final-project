@@ -203,7 +203,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         child: Padding(
                           padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+                              EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
                           child: Text('S'),
                         ),
                       ),
@@ -214,7 +214,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         child: Padding(
                           padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+                              EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
                           child: Text('M'),
                         ),
                       ),
@@ -227,7 +227,7 @@ class DetailPage extends StatelessWidget {
                             )),
                         child: Padding(
                           padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+                              EdgeInsets.symmetric(vertical: 8, horizontal: (MediaQuery.of(context).size.width-24-24-30-30)/6),
                           child: Text(
                             'L',
                             style: TextStyle(color: Colors.orange),
