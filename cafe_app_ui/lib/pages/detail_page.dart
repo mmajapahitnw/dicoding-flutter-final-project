@@ -181,7 +181,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Enjoy AWOR\'s spin on coffee_name. Made with love, a signature treat for weary soul.',
+                    'Enjoy AWOR\'s spin on $name. Made with love, a signature treat for weary soul.',
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 24),
