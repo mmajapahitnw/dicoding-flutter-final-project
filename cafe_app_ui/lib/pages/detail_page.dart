@@ -22,16 +22,10 @@ class DetailPage extends StatelessWidget {
                           backgroundColor: Colors.grey[800],
                           child: Icon(
                             Icons.chevron_left,
-                            color: Colors.white,
+                            color: Colors.orange,
                           ),
                         ),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey[800],
-                          child: Icon(
-                            Icons.favorite,
-                            color: Colors.white,
-                          ),
-                        ),
+                        const FavoriteButton(),
                       ],
                     ),
                   ),
@@ -41,6 +35,35 @@ class DetailPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  const FavoriteButton({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: CircleAvatar(
+        backgroundColor: Colors.grey[800],
+        child: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: Colors.orange,
+        ),
+      ),
+      onTap: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+      },
     );
   }
 }
