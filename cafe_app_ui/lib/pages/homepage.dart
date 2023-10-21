@@ -1,5 +1,6 @@
 import 'package:cafe_app_ui/components/coffee_tile.dart';
 import 'package:cafe_app_ui/components/coffee_type.dart';
+import 'package:cafe_app_ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +13,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // list of coffee types and their status
   final List coffeeTypes = [
-    ['Cappuccino', true],
+    ['Signature', true],
     ['Latte', false],
     ['Black', false],
     ['White', false],
-    ['Tea', false],
+    ['Filter', false],
+    ['Tea & Tisane', false],
+    ['Pastry', false],
+    ['Snack', false],
+    ['Pasta', false],
+    ['Sandwiches', false],
+    ['Main Dish', false],
   ];
 
   final List coffeeTilesInfo = [
@@ -142,11 +149,18 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTilesInfo.length,
               itemBuilder: (context, index) {
-                return CoffeeTile(
-                  imagePath: coffeeTilesInfo[index][0],
-                  name: coffeeTilesInfo[index][1],
-                  desc: coffeeTilesInfo[index][2],
-                  price: coffeeTilesInfo[index][3],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return DetailPage();
+                    }));
+                  },
+                  child: CoffeeTile(
+                    imagePath: coffeeTilesInfo[index][0],
+                    name: coffeeTilesInfo[index][1],
+                    desc: coffeeTilesInfo[index][2],
+                    price: coffeeTilesInfo[index][3],
+                  ),
                 );
               },
             ),
