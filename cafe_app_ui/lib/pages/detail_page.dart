@@ -20,9 +20,12 @@ class DetailPage extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           backgroundColor: Colors.grey[800],
-                          child: Icon(
-                            Icons.chevron_left,
-                            color: Colors.orange,
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.chevron_left,
+                              color: Colors.orange,
+                            ),
+                            onPressed: () {Navigator.pop(context);},
                           ),
                         ),
                         const FavoriteButton(),
