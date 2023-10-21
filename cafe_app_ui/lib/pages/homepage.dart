@@ -10,6 +10,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // list of coffee types and their status
+  final List coffeeTypes = [
+    ['Cappuccino', true],
+    ['Latte', false],
+    ['Black', false],
+    ['White', false],
+    ['Tea', false],
+  ];
+
+  // method if user change coffee type
+  void coffeeTypeSelected(int index) {
+    setState(() {
+      for(int i = 0; i < coffeeTypes.length; i++) {
+        coffeeTypes[i][1] = false;
+      }
+      coffeeTypes[index][1] = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +56,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
 
           // search bar
           Padding(
@@ -55,19 +76,25 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 24,),
+          SizedBox(
+            height: 24,
+          ),
 
           // coffe type scrollable
           Container(
             height: 50,
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: [
-                CoffeeType(name: 'Cappucino', isSelected: true,),
-                CoffeeType(name: 'Latte', isSelected: false,),
-                CoffeeType(name: 'White', isSelected: false,),
-                CoffeeType(name: 'Black', isSelected: false,),
-              ],
+              itemCount: coffeeTypes.length,
+              itemBuilder: (context, index) {
+                return CoffeeType(
+                  name: coffeeTypes[index][0],
+                  isSelected: coffeeTypes[index][1],
+                  onTap: () {
+                    coffeeTypeSelected(index);
+                  },
+                );
+              },
             ),
           ),
 
@@ -76,7 +103,7 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                CoffeTile(),
+                CoffeeTile(),
               ],
             ),
           )

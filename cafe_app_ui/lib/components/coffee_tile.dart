@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CoffeTile extends StatelessWidget {
-  const CoffeTile({super.key});
+class CoffeeTile extends StatelessWidget {
+  const CoffeeTile({super.key});
 
   @override
   Widget build(BuildContext context) {
