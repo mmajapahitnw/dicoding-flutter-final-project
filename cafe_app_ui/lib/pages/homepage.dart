@@ -154,8 +154,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.orange,), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_bag,), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
         ],
