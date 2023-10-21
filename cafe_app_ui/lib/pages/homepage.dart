@@ -20,19 +20,49 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final List coffeeTilesInfo = [
-    // [ image_path, item_name, item_desc ]
-    ['lib/images/affogato', 'Affogato', 'Ice Cream Kissed by Espresso'],
-    ['lib/images/allen', 'Allen Immersion', 'Aromatics, Creamy, and Bold Coffee'],
-    ['lib/images/espresso', 'Espresso Shot', 'Single 30mL / Double 60mL'],
-    ['lib/images/latte', 'White Creamy Latte', 'Simply & Creamy Buddies!'],
-    ['lib/images/machiato', 'Machiato', 'Perfect Fusion Between Coffee and Macha'],
-    ['lib/images/palmeira', 'Palmeira', 'Palm & Strong Coffee Booster'],
+    // [ image_path, item_name, item_desc, price ]
+    [
+      'lib/images/affogato.jpg',
+      'Affogato',
+      'Ice Cream Kissed by Espresso',
+      '30000',
+    ],
+    [
+      'lib/images/allen.jpg',
+      'Allen Immersion',
+      'Aromatics, Creamy, and Bold Coffee',
+      '25000',
+    ],
+    [
+      'lib/images/espresso.jpg',
+      'Espresso Shot',
+      'Single 30mL / Double 60mL',
+      '18000',
+    ],
+    [
+      'lib/images/latte.jpg',
+      'White Creamy Latte',
+      'Simply & Creamy Buddies!',
+      '25000',
+    ],
+    [
+      'lib/images/machiato.jpg',
+      'Machiato',
+      'Perfect Fusion Between Coffee and Macha',
+      '20000',
+    ],
+    [
+      'lib/images/palmeira.jpg',
+      'Palmeira',
+      'Palm & Strong Coffee Booster',
+      '23000',
+    ],
   ];
 
   // method if user change coffee type
   void coffeeTypeSelected(int index) {
     setState(() {
-      for(int i = 0; i < coffeeTypes.length; i++) {
+      for (int i = 0; i < coffeeTypes.length; i++) {
         coffeeTypes[i][1] = false;
       }
       coffeeTypes[index][1] = true;
@@ -90,7 +120,7 @@ class _HomePageState extends State<HomePage> {
             height: 24,
           ),
 
-          // coffe type scrollable
+          // coffee type scrollable
           Container(
             height: 50,
             child: ListView.builder(
@@ -110,11 +140,17 @@ class _HomePageState extends State<HomePage> {
 
           // menu tiles
           Expanded(
-            child: ListView(
+            child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              children: [
-                CoffeeTile(),
-              ],
+              itemCount: coffeeTilesInfo.length,
+              itemBuilder: (context, index) {
+                return CoffeeTile(
+                  imagePath: coffeeTilesInfo[index][0],
+                  name: coffeeTilesInfo[index][1],
+                  desc: coffeeTilesInfo[index][2],
+                  price: '25000',
+                );
+              },
             ),
           )
         ],
