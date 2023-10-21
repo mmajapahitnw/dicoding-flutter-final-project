@@ -7,6 +7,7 @@ class CoffeeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 24, bottom: 24),
+      // foundation tile
       child: Container(
         width: 200,
         decoration: BoxDecoration(
@@ -15,6 +16,7 @@ class CoffeeTile extends StatelessWidget {
         ),
         child: Column(
           children: [
+
             // menu item image
             Padding(
               padding: const EdgeInsets.only(top: 8, left: 8, right: 8,),

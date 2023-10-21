@@ -19,6 +19,16 @@ class _HomePageState extends State<HomePage> {
     ['Tea', false],
   ];
 
+  final List coffeeTilesInfo = [
+    // [ image_path, item_name, item_desc ]
+    ['lib/images/affogato', 'Affogato', 'Ice Cream Kissed by Espresso'],
+    ['lib/images/allen', 'Allen Immersion', 'Aromatics, Creamy, and Bold Coffee'],
+    ['lib/images/espresso', 'Espresso Shot', 'Single 30mL / Double 60mL'],
+    ['lib/images/latte', 'White Creamy Latte', 'Simply & Creamy Buddies!'],
+    ['lib/images/machiato', 'Machiato', 'Perfect Fusion Between Coffee and Macha'],
+    ['lib/images/palmeira', 'Palmeira', 'Palm & Strong Coffee Booster'],
+  ];
+
   // method if user change coffee type
   void coffeeTypeSelected(int index) {
     setState(() {
