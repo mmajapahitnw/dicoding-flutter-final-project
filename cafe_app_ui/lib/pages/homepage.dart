@@ -127,6 +127,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 50,
             child: ListView.builder(
+              padding: const EdgeInsets.only(right: 24),
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTypes.length,
               itemBuilder: (context, index) {
@@ -145,6 +146,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 310,
             child: ListView.builder(
+              padding: const EdgeInsets.only(right: 24),
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTilesInfo.length,
               itemBuilder: (context, index) {
