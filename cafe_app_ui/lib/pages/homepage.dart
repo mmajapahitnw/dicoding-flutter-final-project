@@ -89,8 +89,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: ListView(
         children: [
           // header
           const Padding(
