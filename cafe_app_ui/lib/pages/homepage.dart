@@ -143,7 +143,8 @@ class _HomePageState extends State<HomePage> {
           ),
 
           // menu tiles
-          Flexible(
+          Container(
+            height: 310,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: coffeeTilesInfo.length,
