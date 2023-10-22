@@ -243,7 +243,7 @@ class DetailPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: 70,
+        height: 65,
         child: Padding(
           padding: const EdgeInsets.only(left: 24, right: 24, bottom: 12),
           child: Row(
