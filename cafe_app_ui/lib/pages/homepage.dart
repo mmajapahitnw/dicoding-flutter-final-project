@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           // menu tiles
-          Container(
+          SizedBox(
             height: 310,
             child: ListView.builder(
               padding: const EdgeInsets.only(right: 24),
